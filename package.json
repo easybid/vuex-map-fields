@@ -1,18 +1,22 @@
 {
-  "name": "vuex-map-fields",
-  "version": "1.4.1",
+  "name": "vuex-composition-map-fields",
+  "version": "1.0.2",
   "description": "Enable two-way data binding for form fields saved in a Vuex store",
   "keywords": [
     "vue",
+    "vue 3",
     "vuex",
+    "vuex 4",
+    "composition",
+    "composition-api",
     "two-way data binding"
   ],
   "author": "Markus Oberlehner",
   "homepage": "https://github.com/maoberlehner/vuex-map-fields",
   "license": "MIT",
   "scripts": {
-    "scripts:umd": "rollup --config --output.format umd --name vuex-map-fields --output.file dist/index.js src/index.js",
-    "scripts:es": "rollup --config --output.format es --name vuex-map-fields --output.file dist/index.esm.js src/index.js",
+    "scripts:umd": "rollup --config --output.format umd --name vuex-composition-map-fields --output.file dist/index.js src/index.js",
+    "scripts:es": "rollup --config --output.format es --name vuex-composition-map-fields --output.file dist/index.esm.js src/index.js",
     "scripts:minify": "uglifyjs --compress --mangle --comments --output dist/index.min.js dist/index.js && uglifyjs --compress --mangle --comments --output dist/index.esm.min.js dist/index.esm.js",
     "scripts": "yarn run scripts:umd && yarn run scripts:es && yarn run scripts:minify",
     "build": "yarn run scripts",
@@ -25,12 +29,13 @@
     "test:integration": "yarn run fake-publish && jest test",
     "test:coverage": "yarn run fake-publish && jest --coverage --maxWorkers=4",
     "test": "yarn run test:unit && yarn run test:integration",
-    "prepublishOnly": "yarn run lint && yarn test && yarn run build"
+    "prepublishOnly": "yarn run lint && yarn run build"
   },
   "devDependencies": {
     "@avalanche/eslint-config": "^4.0.0",
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
+    "@vue/composition-api": "^1.0.0-rc.2",
     "@vue/test-utils": "1.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^26.3.0",
